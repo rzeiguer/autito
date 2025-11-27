@@ -3,7 +3,7 @@ const int Echo1 = ...;
 const int Trigger2 = ...;
 const int Echo2 = ...;
 
-long t1, t2, distance1, distance2;
+long t, distance1, distance2;
 
 void setup(){
 
@@ -20,10 +20,10 @@ void loop(){
     digitalWrite(Trigger1, LOW);
     digitalWrite(Trigger2, LOW);
 
-    t1 = pulseIn(Echo1, HIGH);
-    distance1 = t1 / 59;
-    t2 = pulseIn(Echo2, HIGH);
-    distance2 = t2 / 59;
+    t = pulseIn(Echo1, HIGH);
+    distance1 = t / 59;
+    t = pulseIn(Echo2, HIGH);
+    distance2 = t / 59;
 
     if (distance1 < 50){
         avanceIzq();
