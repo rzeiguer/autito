@@ -1,7 +1,7 @@
-const int AIA = 9;  // (pwm) pin 6 conectado a pin A-IA 
-const int AIB = 8;  // (pwm) pin 5 conectado a pin A-IB 
-const int BIA = 11; // (pwm) pin 10 conectado a pin B-IA  
-const int BIB = 12;  // (pwm) pin 9 conectado a pin B-IB 
+const int AIA = 9;  // (pwm) pin 9 conectado a pin A-IA 
+const int AIB = 8;  // (pwm) pin 8 conectado a pin A-IB 
+const int BIA = 11; // (pwm) pin 11 conectado a pin B-IA  
+const int BIB = 12;  // (pwm) pin 12 conectado a pin B-IB 
  
 byte velocidad = 160;  
 // cambie este valor (100 a 255) para controlar 

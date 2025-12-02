@@ -1,0 +1,25 @@
+para el puente h se tienen los motores A y B. 
+IA hace que avance 
+IB hace que retroceda
+
+funciono para que vaya para adelante el motor B
+BIA, velocidad
+BIB, 0
+es al reves para atras
+
+NO FUNCIONA EL PIN 9
+
+-  Un puente h para dos motores en VERTICAL:
+
+    Tenemos el motor A, y el motor B
+    Motor A tiene AIA y AIB
+    Motor B tiene BIA y BIB
+
+    AIA se conecta con BIB --> Cable 1
+    AIB se conecta con BIA --> Cable 2
+
+    Cable 1 va al pin 6
+    Cable 2 va al pin 7
+
+LO MISMO PARA EL SEGUNDO PUENTE H.
+
