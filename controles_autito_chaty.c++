@@ -8,7 +8,7 @@ const int EchoDer = 13;
 const int TriggerIzq = 10; 
 const int EchoIzq = 11;
 
-#define DIST 20
+#define DIST 10
 byte velocidad = 180;
 
 void setup() {
@@ -71,28 +71,28 @@ void UltraIzquierda(long &distancia, long &tiempo){
     distancia = tiempo / 59;
 }
 
-void adelante(){
+void atras(){
   analogWrite(motoresDerAvanzar, velocidad);
   analogWrite(motoresDerRetroceder, 0);
   analogWrite(motoresIzqAvanzar, velocidad);
   analogWrite(motoresIzqRetroceder, 0);
 }
 
-void atras(){
+void adelante(){
   analogWrite(motoresDerAvanzar, 0);
   analogWrite(motoresDerRetroceder, velocidad);
   analogWrite(motoresIzqAvanzar, 0);
   analogWrite(motoresIzqRetroceder, velocidad);
 }
 
-void Der(){
+void Izq(){
   analogWrite(motoresDerAvanzar, 0);
   analogWrite(motoresDerRetroceder, velocidad);
   analogWrite(motoresIzqAvanzar, velocidad);
   analogWrite(motoresIzqRetroceder, 0);
 }
 
-void Izq(){
+void Der(){
   analogWrite(motoresDerAvanzar, velocidad);
   analogWrite(motoresDerRetroceder, 0);
   analogWrite(motoresIzqAvanzar, 0);
