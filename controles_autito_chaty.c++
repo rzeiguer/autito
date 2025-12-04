@@ -31,8 +31,8 @@ void loop() {
     long distDer, timeDer;
     long distIzq, timeIzq;
 
-    UltraDerecha(distDer, timeDer);
-    UltraIzquierda(distIzq, timeIzq);
+    UltraDerecha(&distDer, &timeDer);
+    UltraIzquierda(&distIzq, &timeIzq);
 
     // comportamiento
     if(distDer <= DIST && distIzq > DIST){
@@ -53,46 +53,46 @@ void loop() {
 
 // ---------------- FUNCIONES -------------------
 
-void UltraDerecha(long &distancia, long &tiempo){
+void UltraDerecha(long *distancia, long *tiempo){
     digitalWrite(TriggerDer, HIGH);
     delayMicroseconds(10);
     digitalWrite(TriggerDer, LOW);
 
-    tiempo = pulseIn(EchoDer, HIGH);
-    distancia = tiempo / 59;
+    *tiempo = pulseIn(EchoDer, HIGH);
+    *distancia = *tiempo / 59;
 }
 
-void UltraIzquierda(long &distancia, long &tiempo){
+void UltraIzquierda(long *distancia, long *tiempo){
     digitalWrite(TriggerIzq, HIGH);
     delayMicroseconds(10);
     digitalWrite(TriggerIzq, LOW);
 
-    tiempo = pulseIn(EchoIzq, HIGH);
-    distancia = tiempo / 59;
+    *tiempo = pulseIn(EchoIzq, HIGH);
+    *distancia = *tiempo / 59;
 }
 
-void atras(){
+void adelante(){
   analogWrite(motoresDerAvanzar, velocidad);
   analogWrite(motoresDerRetroceder, 0);
   analogWrite(motoresIzqAvanzar, velocidad);
   analogWrite(motoresIzqRetroceder, 0);
 }
 
-void adelante(){
+void atras(){
   analogWrite(motoresDerAvanzar, 0);
   analogWrite(motoresDerRetroceder, velocidad);
   analogWrite(motoresIzqAvanzar, 0);
   analogWrite(motoresIzqRetroceder, velocidad);
 }
 
-void Izq(){
+void Der(){
   analogWrite(motoresDerAvanzar, 0);
   analogWrite(motoresDerRetroceder, velocidad);
   analogWrite(motoresIzqAvanzar, velocidad);
   analogWrite(motoresIzqRetroceder, 0);
 }
 
-void Der(){
+void Izq(){
   analogWrite(motoresDerAvanzar, velocidad);
   analogWrite(motoresDerRetroceder, 0);
   analogWrite(motoresIzqAvanzar, 0);
